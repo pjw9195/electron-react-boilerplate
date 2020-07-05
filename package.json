@@ -1,0 +1,84 @@
+{
+  "name": "cross-border-electron",
+  "version": "0.1.0",
+  "puppeteer": {
+    "chromium_revision": "494755"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "electron-is-dev": "^1.1.0",
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "xlsx": "^0.15.1"
+  },
+  "devDependencies": {
+    "@toast-ui/react-editor": "^1.0.1",
+    "@toast-ui/react-image-editor": "^1.2.0",
+    "canvas": "^2.6.1",
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
+    "electron": "8.2.0",
+    "electron-builder": "^22.4.1",
+    "electron-reload": "^1.5.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-flowtype": "^3.13.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-you-dont-need-lodash-underscore": "^6.9.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.1",
+    "prettier": "^2.0.2",
+    "nodemon": "^2.0.4",
+    "wait-on": "^4.0.2"
+  },
+  "scripts": {
+    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron:build": "npm run build && electron-builder --config ./electron-builder.yml",
+    "react-start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}'"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{src,cypress}/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
