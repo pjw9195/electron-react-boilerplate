@@ -1,6 +1,6 @@
 {
-  "name": "cross-border-electron",
-  "version": "0.1.0",
+  "name": "electron-react-boilerplate",
+  "version": "0.0.1",
   "puppeteer": {
     "chromium_revision": "494755"
   },

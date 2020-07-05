@@ -1,35 +1,35 @@
-productName: "cross-border"
-appId: "cross-border"
+productName: 'electron-react-boilerplate'
+appId: 'electron-react-boilerplate'
 
 # Package electron code into a asar archive. Set to false to debug issues.
 asar: true
 protocols:
-  - name: "cross-border"
+  - name: 'electron-react-boilerplate'
     schemes:
       - ms-batchlabs
       - ms-batch-explorer
 
 files:
-  - "build/"
-  - "package.json"
-  - "dev-app-update.yml"
-  - "!node_modules/jschardet/"
-  - "electron-builder.env"
+  - 'build/'
+  - 'package.json'
+  - 'dev-app-update.yml'
+  - '!node_modules/jschardet/'
+  - 'electron-builder.env'
 
 # Mac OS configuration
 mac:
-  icon: "./public/assets/icons/icon.png"
+  icon: './public/assets/icons/icon.png'
 
 # Config for OSX dmg
 dmg:
-  title: "jiku"
+  title: 'jiku'
 
 # Windows configuration
 win:
-  icon: "./public/assets/icons/icon.png"
+  icon: './public/assets/icons/icon.png'
   target:
-    - "zip"
-    - "nsis"
+    - 'zip'
+    - 'nsis'
 
 # Config for the windows installer
 nsis:
@@ -40,17 +40,16 @@ nsis:
 linux:
   category: Development
   target:
-    - "AppImage"
-    - "deb"
-    - "rpm"
+    - 'AppImage'
+    - 'deb'
+    - 'rpm'
 
 directories:
-  buildResources: "resources"
-  output: "dist/"
-  app: "."
-
+  buildResources: 'resources'
+  output: 'dist/'
+  app: '.'
 
 publish:
-  provider: "s3"
-  bucket: "bucket-name"
-  acl: "public-read"
+  provider: 's3'
+  bucket: 'bucket-name'
+  acl: 'public-read'
